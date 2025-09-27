@@ -7,7 +7,7 @@ import { OpenAI } from 'openai';
 dotenv.config();
 const app = express();
 app.use(cors({
-  origin: ''*, // or use process.env.FRONTEND_ORIGIN for flexibility
+  origin: '*', // or use process.env.FRONTEND_ORIGIN for flexibility
   methods: ['GET', 'POST'],
   credentials: false
 }));
