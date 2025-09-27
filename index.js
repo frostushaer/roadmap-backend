@@ -6,7 +6,11 @@ import { OpenAI } from 'openai';
 
 dotenv.config();
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ''*, // or use process.env.FRONTEND_ORIGIN for flexibility
+  methods: ['GET', 'POST'],
+  credentials: false
+}));
 app.use(express.json());
 
 app.post('/api/roadmap', async (req, res) => {
